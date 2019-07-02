@@ -16,7 +16,7 @@ function CMap = mrfT1(customMap)
 %   See also COLORMAP
 
     % define which .mat file to load
-    if (nargin < 1)
+    if (nargin < 1) || (isnumeric(customMap))
         mapFile = 'T1cm.mat';
     else
         mapFile = customMap;

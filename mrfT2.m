@@ -16,7 +16,7 @@ function CMap = mrfT2(customMap)
 %   See also COLORMAP
 
     % define which .mat file to load
-    if (nargin < 1)
+    if (nargin < 1) || (isnumeric(customMap))
         mapFile = 'T2cm.mat';
     else
         mapFile = customMap;
@@ -25,7 +25,7 @@ function CMap = mrfT2(customMap)
     % load mat file and get fields
     try
         map = load(mapFile);
-    catch
+    catch        
         map = load(fullfile('Obmann et al', mapFile));
     end
     mapFields = fields(map);
